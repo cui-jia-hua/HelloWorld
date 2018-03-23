@@ -7,34 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical">
-        <TextBlock Text="Lorem Ipsum" FontSize="48"></TextBlock>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Width="200" TextWrapping = "Wrap" Text="Lorem ipsum dolor sit amet,
-                       consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-            <TextBlock Width="300" TextWrapping = "Wrap"  Text=" Lorem ipsum dolor sit amet,
-                       consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-            <StackPanel Orientation="Vertical" Margin="30,0,0,0">
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Fill="blue" Width="70" Height="70"/>
-                    <StackPanel Orientation="Vertical">
-                        <Rectangle Fill="red" Width="70" Height="35" />
-                        <Rectangle Fill="green" Width="70" Height="35" />
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
-        
-        <StackPanel Orientation="Vertical">
-            
-
-        </StackPanel>
-    </StackPanel>
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <TextBlock Text="Title" FontSize="30" FontWeight="Black" Margin="10,0,0,0" RelativePanel.AlignVerticalCenterWith="button" />
+            <Button Name="button" Content="search" FontSize="20" Margin="20" RelativePanel.AlignRightWithPanel="True" />
+            <TextBox Name="input" FontSize="20" RelativePanel.LeftOf="button" RelativePanel.AlignVerticalCenterWith="button" MinWidth="150" />
+            <TextBlock Name="searchText" FontSize="30" Text="Search:" Margin="0,0,30,0" RelativePanel.LeftOf="input" RelativePanel.AlignVerticalCenterWith="button" />
+        </RelativePanel>
+        <Border Grid.Row="2" BorderThickness="5" BorderBrush="Gray">
+            <RelativePanel Grid.Row="2" Background="LightGray">
+                <TextBlock Text="Items:10" FontSize="20" Margin="10" RelativePanel.AlignLeftWithPanel="True" />
+                <TextBlock Text="User:Bob" FontSize="20" Margin="10" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <TextBlock Text="Version:1.0.0" FontSize="20" Margin="10" RelativePanel.AlignRightWithPanel="True" />
+            </RelativePanel>
+        </Border>
+    </Grid>
 </Page>
