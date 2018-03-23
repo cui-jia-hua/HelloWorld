@@ -31,5 +31,15 @@ namespace HelloWorld
         {
 
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Grid.MaximumRowsOrColumns = 3;
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Grid.MaximumRowsOrColumns = 4;
+        }
     }
 }
