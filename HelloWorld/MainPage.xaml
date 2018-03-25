@@ -8,23 +8,24 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Name="button1" Content="C3" FontSize="30" Click="button1_Click" />
-                <Button Margin="20,0,0,0" Name="button2" Content="C4" FontSize="30" Click="button2_Click" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <RadioButton FontSize="50" GroupName="first,second" Content="first"></RadioButton>
+                <RadioButton FontSize="50" Content="second"></RadioButton>
+                <RadioButton FontSize="50" Content="third"></RadioButton>
             </StackPanel>
-            <VariableSizedWrapGrid Name="Grid" ItemHeight="150" ItemWidth="150"
-                                   MaximumRowsOrColumns="3" Orientation="Horizontal">
-                <Rectangle Fill="Red" VariableSizedWrapGrid.RowSpan="2" VariableSizedWrapGrid.ColumnSpan="2" />
-                <Rectangle Fill="Orange" VariableSizedWrapGrid.RowSpan="2"/>
-                <Rectangle Fill="Yellow" VariableSizedWrapGrid.ColumnSpan="2" />
-                <Rectangle Fill="Green" VariableSizedWrapGrid.RowSpan="2"/>
-                <Rectangle Fill="LightBlue" />
-                <Rectangle Fill="Blue" VariableSizedWrapGrid.RowSpan="2" VariableSizedWrapGrid.ColumnSpan="2" />
-                <Rectangle Fill="BlueViolet" VariableSizedWrapGrid.ColumnSpan="2" />
-                
-            </VariableSizedWrapGrid>
-        </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <RadioButton FontSize="50" GroupName="first" Content="first2"></RadioButton>
+                <RadioButton FontSize="50" GroupName="first" Content="second2"></RadioButton>
+                <RadioButton FontSize="50" GroupName="second" Content="third2"></RadioButton>
+                <RadioButton FontSize="50" GroupName="second" Content="forth2"></RadioButton>
+            </StackPanel>
+        </Grid>
     </Grid>
     
 </Page>
