@@ -26,11 +26,13 @@ namespace HelloWorld
         {
             this.InitializeComponent();
         }
-
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
         
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool) first.IsChecked)
+                display.Text = "first";
+            else
+                display.Text = "none";
+        }
     }
 }
