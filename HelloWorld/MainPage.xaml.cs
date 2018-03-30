@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Import;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,10 +30,14 @@ namespace HelloWorld
         
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if ((bool) first.IsChecked)
-                display.Text = "first";
-            else
-                display.Text = "none";
+            
+        }
+
+        private void AutoSuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            var sources = new string[] {"abc", "abcd", "abcde","cba"};
+            Box.ItemsSource = sources.Where(m => m.StartsWith(Box.Text)).ToArray();
         }
     }
+
 }
