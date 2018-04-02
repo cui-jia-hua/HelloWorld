@@ -5,51 +5,55 @@
     xmlns:local="using:HelloWorld"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-    
-    <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <RadioButton Name="first" FontSize="50" GroupName="first" >
-                   
-                </RadioButton>
-                <Slider Width="200" Name="Slider"></Slider>
-                <ProgressBar Width="200" Value="{x:Bind Slider.Value, Mode=OneWay}"></ProgressBar>
-                
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <AutoSuggestBox Width="230" Height="70" QueryIcon="Find"
-                                Name="Box" FontSize="32"
-                                PlaceholderText="search hhh"
-                                TextChanged="AutoSuggestBox_OnTextChanged" ></AutoSuggestBox>
-            </StackPanel>
-            <RelativePanel Grid.Row="2">
-                <Button Margin="20" FontSize="30" Name="button" Content="click" RelativePanel.AlignVerticalCenterWithPanel="True" Click="button_Click">
-                    <Button.Flyout>
-                        <MenuFlyout>
-                            <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                            <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                            <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                            <MenuFlyoutSubItem>
-                                <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                                <MenuFlyoutSeparator></MenuFlyoutSeparator>
-                                <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                                <MenuFlyoutSubItem>
-                                    <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                                    <MenuFlyoutItem Text="M1"></MenuFlyoutItem>
-                                    <MenuFlyoutSeparator></MenuFlyoutSeparator>
-                                </MenuFlyoutSubItem>
-                            </MenuFlyoutSubItem>
-                        </MenuFlyout>
-                    </Button.Flyout>
-                </Button>
+    mc:Ignorable="d"
+    Loaded="MainPage_OnLoaded">
 
-            </RelativePanel>
-        </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <Button FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE734;" Click="ButtonBase_OnClick"></Button>
+        </RelativePanel>
+        <SplitView Grid.Row="1"
+                   DisplayMode="CompactOverlay"
+                   CompactPaneLength="50"
+                   Name="SplitView">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" Name="ListBox">
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="32" Text="&#xE734;"></TextBlock>
+                            <TextBlock FontSize="32" >diyige</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="32" Text="&#xE734;"></TextBlock>
+                            <TextBlock FontSize="32">dierge</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid></Grid>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
+    <!--
+    <Grid> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <TextBlock FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="15">简单的播放器</TextBlock>
+        </RelativePanel>
+        <MediaPlayerElement Grid.Row="1"></MediaPlayerElement>
+    </Grid>
+    -->
+    
+
 </Page>

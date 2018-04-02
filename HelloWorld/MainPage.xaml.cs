@@ -27,16 +27,15 @@ namespace HelloWorld
         {
             this.InitializeComponent();
         }
-        
-        private void button_Click(object sender, RoutedEventArgs e)
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
         }
 
-        private void AutoSuggestBox_OnTextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
         {
-            var sources = new string[] {"abc", "abcd", "abcde","cba"};
-            Box.ItemsSource = sources.Where(m => m.StartsWith(Box.Text)).ToArray();
+            
         }
     }
 
