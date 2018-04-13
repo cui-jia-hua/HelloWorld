@@ -5,55 +5,29 @@
     xmlns:local="using:HelloWorld"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Loaded="MainPage_OnLoaded">
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="Dictionary1.xaml">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <RelativePanel Grid.Row="0">
-            <Button FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE734;" Click="ButtonBase_OnClick"></Button>
-        </RelativePanel>
-        <SplitView Grid.Row="1"
-                   DisplayMode="CompactOverlay"
-                   CompactPaneLength="50"
-                   Name="SplitView">
-            <SplitView.Pane>
-                <ListBox SelectionMode="Single" Name="ListBox">
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="32" Text="&#xE734;"></TextBlock>
-                            <TextBlock FontSize="32" >diyige</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="32" Text="&#xE734;"></TextBlock>
-                            <TextBlock FontSize="32">dierge</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
-                </ListBox>
-            </SplitView.Pane>
-            <SplitView.Content>
-                <Grid></Grid>
-            </SplitView.Content>
-        </SplitView>
-    </Grid>
-    <!--
-    <Grid> 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <RelativePanel>
-            <TextBlock FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="15">简单的播放器</TextBlock>
-        </RelativePanel>
-        <MediaPlayerElement Grid.Row="1"></MediaPlayerElement>
-    </Grid>
-    -->
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <StackPanel>
+        <TextBlock Foreground="{StaticResource
+        MyRedBrush}" Text="{StaticResource Mygreatingstring}" FontSize="48"></TextBlock>
+        <Button Style="{StaticResource Mybuttonstyle}">button</Button>
+
+    </StackPanel>
     
-
 </Page>
+
+
+
+
+
+
+

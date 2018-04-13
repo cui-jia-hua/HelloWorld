@@ -27,16 +27,7 @@ namespace HelloWorld
         {
             this.InitializeComponent();
         }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
-        }
-
-        private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
+        
     }
-
 }
