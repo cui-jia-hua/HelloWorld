@@ -6,23 +6,53 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="Dictionary1.xaml">
-
-                </ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
-    <StackPanel>
-        <TextBlock Foreground="{StaticResource
-        MyRedBrush}" Text="{StaticResource Mygreatingstring}" FontSize="48"></TextBlock>
-        <Button Style="{StaticResource Mybuttonstyle}">button</Button>
-
-    </StackPanel>
-    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="12">
+                <TextBlock Text="Adaptive Tiles" FontSize="20" FontWeight="Bold" />
+                <Button Click="UpdateBadge" VerticalAlignment="Top" Margin="12" Background="#330070B0">Update Badge Count</Button>
+                <Button Click="UpdatePrimaryTile" VerticalAlignment="Top" Background="#330070B0" Margin="12">Update Primary Tile</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="12">
+                <TextBlock Text="Interactive Toast" FontSize="20" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Margin="12">
+                    <TextBlock x:Name="Description" VerticalAlignment="Center" Text="{x:Bind CurrentToDoTask.Description, Mode=OneWay}" FontWeight="Bold" />
+                    <CheckBox Margin="12,0,0,0" IsChecked="{x:Bind CurrentToDoTask.IsComplete, Mode=OneWay}" IsEnabled="False" />
+                </StackPanel>
+                <Button Click="Notify" Background="#330070B0" Margin="12">Notify</Button>
+                <Button Background="#330070B0" Click="{x:Bind Refresh}" Margin="12">Refresh</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="12">
+                <TextBlock Text="我翻译的 本文来自http://blog.csdn.net/lindexi_gd" />
+                <TextBlock Text="磁贴" FontSize="20" FontWeight="Bold" />
+                <Button Click="UpdateBadge" VerticalAlignment="Top" Margin="12" Background="#330070B0">更新磁贴数</Button>
+                <Button Click="UpdatePrimaryTile" VerticalAlignment="Top" Background="#330070B0" Margin="12">更新显示磁贴</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="12">
+                <TextBlock Text="互动吐司" FontSize="20" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Margin="12">
+                    <TextBlock x:Name="xdescription" VerticalAlignment="Center" Text="{x:Bind CurrentToDoTask.Description, Mode=OneWay}" FontWeight="Bold" />
+                    <CheckBox Margin="12,0,0,0" IsChecked="{x:Bind CurrentToDoTask.IsComplete, Mode=OneWay}" IsEnabled="False" />
+                </StackPanel>
+                <Button Click="Notify" Background="#330070B0" Margin="12">通知</Button>
+                <Button Background="#330070B0" Click="{x:Bind Refresh}" Margin="12">更新</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Page>
 
 
